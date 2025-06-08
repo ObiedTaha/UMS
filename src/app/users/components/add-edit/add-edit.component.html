@@ -1,0 +1,67 @@
+<section class="min-vh-100">
+  <div class="container ">
+    <div class="row py-5 ">
+      <div>
+        <h2>
+          {{ userId ? "Update User" : "Add New User " }}
+        </h2>
+      </div>
+      <div class="col-md-10 p-5 m-5 bg-white rounded-4  ">
+        <form [formGroup]="userForm" (ngSubmit)="sendData(userForm)">
+          <div class="row">
+            <div class="col-md-6">
+              <label>First Name</label>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter Your first Name" aria-label="Username"
+                       formControlName="firstName" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label> Last Name</label>
+              <div class="input-group mb-3">
+                <input formControlName="lastName" type="text" class="form-control" placeholder="Enter your last name"
+                       aria-label="Username"
+                       aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label>Email</label>
+              <div class="input-group mb-3">
+                <input formControlName="email" type="email" class="form-control" placeholder="Enter Your email"
+                       aria-label="Username"
+                       aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label>Age</label>
+              <div class="input-group mb-3">
+                <input formControlName="age" type="number" class="form-control" placeholder="Enter your age"
+                       aria-label="Username"
+                       aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label>Phone Number</label>
+              <div class="input-group mb-3">
+                <input formControlName="phone" type="tel" class="form-control" placeholder="Phone" aria-label="Username"
+                       aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label>Birth Date</label>
+              <div class="input-group mb-3">
+                <input formControlName="birthDate" type="text" class="form-control" placeholder="your birthday"
+                       aria-label="Username"
+                       aria-describedby="basic-addon1" required>
+                <span class="icon"></span>
+              </div>
+            </div>
+          </div>
+          <div class=" d-flex justify-content-center m-5 ">
+            <button class="btn btn-warning w-50 text-white "> Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

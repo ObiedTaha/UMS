@@ -1,0 +1,45 @@
+<section>
+    <div class="container h-100  d-flex justify-content-center align-items-center">
+        <div class="row ">
+            <div class="col-md-5 py-5 w-100 bg-white rounded-4">
+                <h1 class="mb-4 text-center">User Management System</h1>
+                <h5 class="fs-5 text-center fw-bold pt-4">SIGN IN</h5>
+                <p class="text-muted caption text-center">Enter your credentials to access your account</p>
+
+                <form [formGroup]="loginForm" (ngSubmit)="sendData(loginForm)">
+                    <div>
+                        <div class="input-group mb-3">
+
+                            <input formControlName="username" type="text" class="form-control"
+                                placeholder="Enter Your Email" aria-label="email" aria-describedby="basic-addon1">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                        </div>
+                        <div  *ngIf="loginForm.get('username')?.errors && loginForm.get('username')?.touched">
+                            <p class="text-muted" *ngIf="loginForm.get('username')?.getError('required')"> <span class="text-danger">*</span> Email is Required </p>
+                            <p class="text-muted" *ngIf="loginForm.get('username')?.getError('username')"> <span class="text-danger">*</span> write valid Email </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-group mb-3">
+
+                            <input formControlName="password" type="text" class="form-control"
+                                placeholder="Enter Your Password" [type]="isHide?'password':'text'"
+                                aria-label="Password" aria-describedby="basic-addon1">
+                            <span (click)="isHide= !isHide" class="input-group-text" id="basic-addon1">
+                                <i class="fa-solid" [class]="isHide?'fa-eye-slash':'fa-eye' "></i>
+                            </span>
+                        </div>
+                        <div  *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+                            <p class="text-muted" *ngIf="loginForm.get('password')?.getError('required')"> <span class="text-danger">*</span> password is Required </p>
+                            <p class="text-muted" *ngIf="loginForm.get('password')?.getError('pattern')"> <span class="text-danger">*</span> Password should start at least one capital char and small char and number </p>
+                        </div>
+                    </div>
+
+                    <button [disabled]="loginForm.invalid"  class="btn w-100 btn-warning text-white">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

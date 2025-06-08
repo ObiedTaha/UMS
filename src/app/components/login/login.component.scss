@@ -1,0 +1,26 @@
+section{
+    background: linear-gradient( #FEAF00 , #F8D442 );
+    height: 100vh;
+
+    h1{
+        font-size: 24px;
+        font-weight: 700;
+        position: relative;
+        padding:0 10px ;
+        &::after{
+            content:'' ;
+            width: 4px;
+            height: 70%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0px;
+            background-color: #F8D442;
+        }
+    } 
+    
+    .caption{
+        font-size: 11px;
+        margin-bottom: 50px;
+    }
+}

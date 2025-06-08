@@ -1,0 +1,25 @@
+<section>
+  <h1>UMS</h1>
+  <div class="text-center">
+    <img [src]="userImage" class="bg-danger rounded rounded-circle" alt="">
+    <h4 class="fs-5"> {{ userName }} </h4>
+    <h6>Admin</h6>
+  </div>
+  <div class="text-center d-flex flex-column justify-content-around   h-75">
+    <ul class="list-unstyled">
+      <li><a [routerLinkActiveOptions]="{exact:true}" class="rounded text-decoration-none" routerLinkActive="activeList" routerLink="/home"><img
+        src="./assets/images/logo/home.svg" class="mb-1" alt=""> Home</a></li>
+      <li><a [routerLinkActiveOptions]="{exact:true}" class="rounded text-decoration-none " ro routerLinkActive="activeList" routerLink="/home/users"><img
+        src="../../../assets/images/logo/bookmark.svg" class="mb-1" alt=""> Users</a></li>
+      <li><a [routerLinkActiveOptions]="{exact:true}" class="rounded text-decoration-none " routerLinkActive="activeList" routerLink="/home/users/add"><img
+        src="../../../assets/images/logo/graduation-cap.svg" class="mb-1" alt=""> Add User</a></li>
+      <li><a [routerLinkActiveOptions]="{exact:true}" class="rounded text-decoration-none " routerLinkActive="activeList" routerLink="/home/users/profile"><img
+        src="../../../assets/images/logo/usd-square.svg" class="mb-1" alt=""> Profile</a></li>
+    </ul>
+    <ul class="list-unstyled">
+      <li (click)="logout()" class="pointer" >
+        log Out<img src="./assets/images/logo/sign-out-alt%201.svg ">
+      </li>
+    </ul>
+  </div>
+</section>
