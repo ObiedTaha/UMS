@@ -1,1 +1,60 @@
-<p>profile works!</p>
+<section class="py-5">
+  <h2 class="px-2">Profile</h2>
+  <div class="col-md-10 p-5 m-5 bg-white rounded-4">
+    <div class="centerImage">
+      <img src="assets/images/pexels-photo-2379004%201.svg" class="rounded-circle">
+    </div>
+    <form class="py-5">
+      <div class="row">
+        <div class="col-md-6">
+          <label>First Name</label>
+          <div class="input-group mb-3">
+            <input disabled type="text" class="form-control" aria-label="Username"
+                   [placeholder]="user.firstName" aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label> Last Name</label>
+          <div class="input-group mb-3">
+            <input disabled type="text" class="form-control"
+                   [placeholder]="user.lastName" aria-label="Username"
+                   aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Email</label>
+          <div class="input-group mb-3">
+            <input disabled type="email" class="form-control"
+                   [placeholder]="user.email" aria-label="Username"
+                   aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Age</label>
+          <div class="input-group mb-3">
+            <input disabled type="number" class="form-control"
+                   [placeholder]="user.age" aria-label="Username"
+                   aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Phone Number</label>
+          <div class="input-group mb-3">
+            <input disabled type="tel" class="form-control" aria-label="Username"
+                   [placeholder]="user.phone" aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Birth Date</label>
+          <div class="input-group mb-3">
+            <input disabled type="text" class="form-control"
+                   aria-label="Username"
+                   [placeholder]="user.birthDate" aria-describedby="basic-addon1">
+            <span class="icon"></span>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>

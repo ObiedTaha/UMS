@@ -14,22 +14,26 @@ searchTerm=new BehaviorSubject<string>('');
   }
 
   getUsers(): Observable<any> {
-    return this.http.get('https://dummyjson.com/users');
+    return this.http.get('users');
   }
 
   addUser(data: FormGroup): Observable<any> {
-    return this.http.post('https://dummyjson.com/users/add', data)
+    return this.http.post('users/add', data)
   }
 
   getUserById(id: number): Observable<any> {
-    return this.http.get(`https://dummyjson.com/users/${id}`);
+    return this.http.get(`users/${id}`);
   }
 
   udateUser(data: FormGroup, id: number): Observable<any> {
-    return this.http.put(`https://dummyjson.com/users/${id}`, data)
+    return this.http.put(`users/${id}`, data)
   }
 
   searchByUser(term:string): Observable<any> {
-    return this.http.get(`https://dummyjson.com/users/search?q=${term}`);
+    return this.http.get(`users/search?q=${term}`);
+  }
+
+  getCurrentUser(): Observable<any> {
+    return this.http.get(`user/me`);
   }
 }

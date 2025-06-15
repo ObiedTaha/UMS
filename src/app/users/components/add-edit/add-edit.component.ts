@@ -73,13 +73,15 @@ export class AddEditComponent {
     } else {
       this.userService.addUser(data.value).subscribe({
         next: (response) => {
-          console.log(response)
+          console.log(response);
+
         },
         error: () => {
           console.log(data)
         },
         complete: () => {
           this.toastr.success('User added successfully.');
+          this.userForm.reset();
         }
       })
     }

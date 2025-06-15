@@ -1,18 +1,29 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {UsersService} from "../../users/services/users.service";
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
-  userName: string = localStorage.getItem('fName') + ' ' + localStorage.getItem('lName');
-  userImage = localStorage.getItem('image');
+export class SidebarComponent implements OnInit {
+  userName: string = '';
+  userImage = '';
+  role: string = '';
 
-  constructor(private  router: Router) {
-    console.log(this.userName);
-    console.log(this.userImage);
+  constructor(private router: Router, private user: UsersService) {
+
+  }
+
+  ngOnInit() {
+    this.user.getCurrentUser().subscribe({
+      next: (res) => {
+        this.userName = res.firstName + ' ' + res.lastName;
+        this.userImage = res.image
+        this.role = res.role;
+      }
+    })
   }
 
   logout() {

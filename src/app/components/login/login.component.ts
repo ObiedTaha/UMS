@@ -22,9 +22,7 @@ export class LoginComponent {
     this.auth.onLogin(data.value).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.accessToken);
-        localStorage.setItem('fName', res.firstName);
-        localStorage.setItem('lName', res.lastName);
-        localStorage.setItem('image', res.image);
+
       },
       error: (err) => {
         this.toastr.error(err.error.message);
