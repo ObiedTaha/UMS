@@ -17,10 +17,8 @@ export class NavbarComponent {
     this.usersService.searchByUser(searchTerm).subscribe({
       next:(response)=>{
         this.users = response;
-        console.log(this.users);
       },
       error:(err)=>{
-        console.log(err);
       }
     })
   }

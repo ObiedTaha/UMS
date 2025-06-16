@@ -21,7 +21,6 @@ export class UsersComponent {
       next: (response) => {
         this.allData = response;
         this.listUsers = response.users;
-        console.log(this.listUsers);
       }
     })
   }

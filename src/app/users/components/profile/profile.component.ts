@@ -28,10 +28,8 @@ export class ProfileComponent implements OnInit {
     this._users.getCurrentUser().subscribe({
       next: (res) => {
         this.user = res;
-        console.log(this.user);
       },
       error(err) {
-        console.log(err)
       },
       complete: () => {
       }

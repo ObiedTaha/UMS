@@ -38,7 +38,6 @@ export class AddEditComponent {
   getUserData(id: number) {
     this.userService.getUserById(id).subscribe({
       next: (res) => {
-        console.log(res);
         this.userData = res;
       },
       error: (err) => {
@@ -61,10 +60,8 @@ export class AddEditComponent {
     if (this.userId) {
       this.userService.udateUser(data.value,this.userId).subscribe({
         next: (response) => {
-          console.log(response)
         },
         error: () => {
-          console.log(data)
         },
         complete: () => {
           this.toastr.success('User updated successfully.');
@@ -73,11 +70,9 @@ export class AddEditComponent {
     } else {
       this.userService.addUser(data.value).subscribe({
         next: (response) => {
-          console.log(response);
 
         },
         error: () => {
-          console.log(data)
         },
         complete: () => {
           this.toastr.success('User added successfully.');
